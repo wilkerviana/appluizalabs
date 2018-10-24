@@ -1,0 +1,49 @@
+body {
+  background: rgb(245, 245, 245);
+}
+.mat-tab-header,
+.mat-tab-nav-bar {
+  border: none;
+}
+
+.mat-tab-labels {
+  margin: 0 auto;
+  width: 260px;
+}
+
+.mat-tab-label {
+  background: rgba(0, 129, 204, 0.4);
+  border-radius: 1rem;
+  margin: 0 6px;
+
+  height: 22px !important;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  background: rgba(0, 129, 204, 1);
+}
+
+.mat-tab-group {
+  text-align: center;
+}
+
+.mat-ink-bar {
+  border-radius: 1rem;
+
+  height: 22px !important;
+}
+
+.btn-default {
+  & button {
+    background: rgba(0, 129, 204, 1);
+    border-radius: 1.6rem;
+    border: none;
+    color: white;
+
+    font-size: 0.6rem;
+    text-transform: uppercase;
+
+    padding: 1rem 0.7rem;
+    width: 100px;
+  }
+}
