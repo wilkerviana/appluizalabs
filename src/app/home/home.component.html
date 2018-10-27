@@ -1,0 +1,36 @@
+<div class="container">
+  <button class="btn-menu" mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Configurações</button>
+    <button mat-menu-item>Ajuda</button>
+  </mat-menu>
+  <h1 class="home-title">Dashboard</h1>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Meus produtos cadastrados
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul>
+        <li>Mouse Óptico Logitech</li>
+        <li>Monito Acer 29"</li>
+        <li>Samsung Galaxy S8</li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Meus produtos vendidos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul>
+        <li>Mouse Óptico Logitech</li>
+        <li>Monito Acer 29"</li>
+        <li>Samsung Galaxy S8</li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

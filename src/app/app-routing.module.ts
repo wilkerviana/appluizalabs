@@ -1,3 +1,4 @@
+import { HomeComponent } from "./home/home.component";
 import { StatusComponent } from "./status/status.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: "status",
     component: StatusComponent
+  },
+  {
+    path: "home",
+    component: HomeComponent
   },
   {
     path: "**",
