@@ -5,6 +5,9 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatTabsModule } from "@angular/material";
+import { MatStepperModule } from "@angular/material";
+import { MatFormFieldModule } from "@angular/material";
+import { MatInputModule } from "@angular/material";
 
 import { AppComponent } from "./app.component";
 import { TutorialScreenComponent } from "./tutorial-screen/tutorial-screen.component";
@@ -13,6 +16,7 @@ import { FormsComponent } from "./forms/forms.component";
 import { FormSignupComponent } from "./forms/form-signup/form-signup.component";
 import { FormLoginComponent } from "./forms/form-login/form-login.component";
 import { ErrorsModule } from "./errors/errors.module";
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +24,22 @@ import { ErrorsModule } from "./errors/errors.module";
     TutorialScreenComponent,
     FormsComponent,
     FormSignupComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatStepperModule,
     AppRoutingModule,
     ErrorsModule
   ],
-  providers: [],
+  providers: [{ provide: MatStepperModule }],
+  exports: [MatStepperModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -9,8 +9,14 @@
 
 .button-group {
   margin: 3rem auto;
-  max-width: 75vw;
+  max-width: 240px;
   & .btn {
     margin: 0 0.6rem;
+  }
+}
+
+.btn-default {
+  & button {
+    width: 100px;
   }
 }

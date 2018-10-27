@@ -1,0 +1,21 @@
+.box-status {
+  box-shadow: 0.6rem 1rem 1rem #ccc;
+  width: 90%;
+  max-width: 400px;
+
+  margin: 2rem auto;
+  padding: 2rem;
+  & .status-title {
+    color: rgba(0, 129, 206, 1);
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  & .status-description {
+    color: rgb(95, 95, 95);
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+
+    margin: 1rem auto;
+  }
+}

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.scss']
+  selector: "app-forms",
+  templateUrl: "./forms.component.html",
+  styleUrls: ["./forms.component.scss"]
 })
 export class FormsComponent implements OnInit {
+  screenStatus: string = "/status";
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

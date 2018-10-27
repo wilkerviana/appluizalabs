@@ -1,3 +1,21 @@
-<p>
-  form-signup works!
-</p>
+<div class="brand"></div>
+<div class="container">
+  <form>
+    <fieldset>
+      <div class="inputs">
+        <label for="">Insira o seu e-mail</label>
+        <input type="email" class="input-default">
+      </div>
+      <div class="inputs">
+        <label for="">Crie uma senha</label>
+        <input type="password" class="input-default">
+      </div>
+      <div class="inputs">
+        <label for="">Confirme uma senha</label>
+        <input type="password" class="input-default">
+      </div>
+    </fieldset>
+
+    <a [routerLink]="registerShop" class="btn-default btn-signup"><button>Inscreva-se</button></a>
+  </form>
+</div>

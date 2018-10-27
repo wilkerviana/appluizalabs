@@ -1,3 +1,109 @@
-<p>
-  forms works!
-</p>
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <mat-step [completed]="false">
+    <form>
+      <ng-template matStepLabel>Cadastre<br>sua loja</ng-template>
+      <mat-form-field>
+        <fieldset required>
+          <div class="inputs">
+            <label for="">CNPJ</label>
+            <input matInput type="text" formControlName="dadosLoja1" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <label for="">Razão Social</label>
+            <input matInput type="text" formControlName="dadosLoja2" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <label for="">Nome Fantasia</label>
+            <input matInput type="text" formControlName="dadosLoja3" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <label for="">Site (se possuir)</label>
+            <input matInput type="text" formControlName="dadosLoja4" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <label for="">CEP de Postagem</label>
+            <input matInput type="text" formControlName="dadosLoja5" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <span class="input-title">Nome da loja exibido no Magazine Luiza</span>
+            <label for="">Vendido e entregue por:</label>
+            <input matInput type="text" formControlName="dadosLoja6" class="input-default" required>
+          </div>
+          <div class="inputs">
+            <span class="input-title">Integração com o sistema da Magazine Luiza</span>
+            <label for="">Qual plataforma sua empresa utiliza?</label>
+            <input matInput type="text" formControlName="dadosLoja7" class="input-default" required>
+          </div>
+        </fieldset>
+      </mat-form-field>
+      <div class="button-group">
+        <div class="btn-default">
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [completed]="false">
+    <form>
+      <ng-template matStepLabel>Dados<br>da empresa</ng-template>
+      <mat-form-field>
+        <div class="inputs">
+          <label for="">Endereço</label>
+          <input matInput type="text" formControlName="dadosEmpresa1" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <label for="">Bairro</label>
+          <input matInput type="text" formControlName="dadosEmpresa2" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <label for="">Complemento</label>
+          <input matInput type="text" formControlName="dadosEmpresa3" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <label for="">Cidade</label>
+          <input matInput type="text" formControlName="dadosEmpresa4" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <label for="">Estado</label>
+          <input matInput type="text" formControlName="dadosEmpresa5" class="input-default" required>
+        </div>
+      </mat-form-field>
+      <div class="button-group">
+        <a class="btn-default">
+          <button mat-button matStepperPrevious>Voltar</button>
+        </a>
+        <a class="btn-default">
+          <button mat-button matStepperNext>Próximo</button>
+        </a>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [completed]="false">
+    <form>
+      <ng-template matStepLabel>Dados<br>financeiros</ng-template>
+      <mat-form-field>
+        <div class="inputs">
+          <label for="">Banco</label>
+          <input matInput type="text" formControlName="dadosBancarios1" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <label for="">Agência</label>
+          <input matInput type="text" formControlName="dadosBancarios1" class="input-default" required>
+        </div>
+        <div class="inputs">
+          <span class="input-title">É necessário que seja Conta Corrente</span>
+          <label for="">Conta-Corrente</label>
+          <input matInput type="text" formControlName="dadosBancarios1" class="input-default" required>
+        </div>
+      </mat-form-field>
+      <div class="button-group">
+        <a class="btn-default">
+          <button mat-button matStepperPrevious>Voltar</button>
+        </a>
+        <a [routerLink]="screenStatus" class="btn-default">
+          <button mat-button matStepperNext>Finalizar</button>
+        </a>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

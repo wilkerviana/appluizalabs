@@ -1,0 +1,50 @@
+.container {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 400px;
+}
+
+.inputs {
+  padding: 0.8rem 0;
+  & > label {
+    font-size: 0.9rem;
+    margin-left: 5%;
+  }
+  & .input-title {
+    color: rgba(0, 129, 206, 1);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0 0 4% 5%;
+  }
+  & .input-default {
+    background: rgba(0, 129, 206, 0.3);
+    border: 1px solid #0081ce;
+    border-radius: 1.5rem;
+    color: rgb(59, 59, 59);
+    display: block;
+
+    font-size: 1rem;
+
+    margin: 0.8rem auto;
+    padding: 1rem 0.8rem;
+    width: 90%;
+  }
+  & .input-default:focus {
+    background: rgba(0, 129, 206, 0.6);
+  }
+}
+
+.btn-default {
+  & button {
+    background: rgba(0, 129, 204, 1);
+    border-radius: 1.6rem;
+    border: none;
+    color: white;
+
+    font-size: 0.6rem;
+    text-transform: uppercase;
+
+    padding: 1rem 0.7rem;
+  }
+}
