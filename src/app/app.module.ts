@@ -21,6 +21,8 @@ import { FormLoginComponent } from "./forms/form-login/form-login.component";
 import { ErrorsModule } from "./errors/errors.module";
 import { StatusComponent } from "./status/status.component";
 import { HomeComponent } from "./home/home.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { HomeComponent } from "./home/home.component";
     MatMenuModule,
     MatExpansionModule,
     AppRoutingModule,
-    ErrorsModule
+    ErrorsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ provide: MatStepperModule }],
   exports: [MatStepperModule],

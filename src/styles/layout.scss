@@ -10,6 +10,11 @@ body {
   height: 100vh;
 }
 
+.mat-tab-group .mat-tab-header {
+  top: 250px !important;
+  z-index: 9999;
+}
+
 .mat-tab-header,
 .mat-tab-nav-bar {
   border: none;
@@ -35,6 +40,7 @@ body {
 
 .mat-tab-group {
   margin: 0 auto;
+  height: 625px;
   max-width: 300px;
   text-align: center;
 }
