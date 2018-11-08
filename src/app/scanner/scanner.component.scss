@@ -1,0 +1,23 @@
+.btn-default {
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  & button {
+    width: 100%;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  & small {
+    font-size: 0.6em;
+    text-align: center;
+  }
+}
+
+.results {
+  margin: 1rem auto;
+}

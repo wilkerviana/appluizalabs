@@ -24,6 +24,7 @@ import { HomeComponent } from "./home/home.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { ZXingScannerModule } from "@zxing/ngx-scanner";
+import { ScannerComponent } from './scanner/scanner.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ZXingScannerModule } from "@zxing/ngx-scanner";
     FormSignupComponent,
     FormLoginComponent,
     StatusComponent,
-    HomeComponent
+    HomeComponent,
+    ScannerComponent
   ],
   imports: [
     BrowserModule,

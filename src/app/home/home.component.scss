@@ -1,3 +1,7 @@
+ul {
+  list-style: none;
+}
+
 .home-title {
   color: rgba(0, 129, 206, 1);
   margin: 2rem auto;
@@ -6,4 +10,56 @@
 .btn-menu {
   color: rgba(0, 129, 206, 1);
   float: right;
+}
+
+footer {
+  border-top: 1px solid #0081ce;
+  border-radius: 0.6em;
+  position: fixed;
+  bottom: 0;
+  height: 4rem;
+  width: 100%;
+  & ul {
+    max-width: 320px;
+    margin: 1rem auto 0;
+    height: 100%;
+  }
+  & ul li {
+    display: inline-block;
+    margin: 0 0.4rem;
+    width: 20%;
+    text-align: center;
+  }
+
+  & .item-menu {
+    & img {
+      display: block;
+      width: 24px;
+      margin: 0 auto;
+    }
+    & button {
+      color: #0081ce;
+      font-size: 0.525rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.barcode {
+  & img {
+    display: block;
+    max-width: 160px;
+    margin: 1rem auto;
+  }
+  & button {
+    display: block;
+    background: #0081ce;
+    border-radius: 2rem;
+    color: #fff;
+    padding: 1rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 260px;
+  }
 }

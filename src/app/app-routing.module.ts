@@ -1,3 +1,4 @@
+import { ScannerComponent } from "./scanner/scanner.component";
 import { HomeComponent } from "./home/home.component";
 import { StatusComponent } from "./status/status.component";
 import { NgModule } from "@angular/core";
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
+  },
+  {
+    path: "scanner",
+    component: ScannerComponent
   },
   {
     path: "**",

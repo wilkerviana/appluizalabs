@@ -18,7 +18,7 @@
     margin: 0 0 4% 5%;
   }
   & .input-default {
-    background: rgba(0, 129, 206, 0.3);
+    background: rgba(0, 129, 206, 0.2);
     border: 1px solid #0081ce;
     border-radius: 1.5rem;
     color: rgb(59, 59, 59);
@@ -27,11 +27,11 @@
     font-size: 1rem;
 
     margin: 0.8rem auto;
-    padding: 1rem 0.8rem;
+    padding: 0.8rem;
     width: 90%;
   }
   & .input-default:focus {
-    background: rgba(0, 129, 206, 0.6);
+    background: rgba(0, 129, 206, 0.4);
   }
 }
 

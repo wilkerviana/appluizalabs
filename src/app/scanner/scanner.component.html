@@ -1,0 +1,63 @@
+<div class="scanner-shell" [hidden]="!hasDevices">
+  <header>
+    <select (change)="onDeviceSelectChange($event.target.value)">
+      <option value="" [selected]="!currentDevice"
+        >Nenhuma câmera selecionada</option
+      >
+      <option
+        *ngFor="let device of availableDevices"
+        [value]="device.deviceId"
+        [selected]="currentDevice && device.deviceId === currentDevice.deviceId"
+        >{{ device.label }}</option
+      >
+    </select>
+  </header>
+
+  <zxing-scanner
+    #scanner
+    [device]="currentDevice"
+    (scanSuccess)="handleQrCodeResult($event)"
+    [formats]="['EAN_13', 'CODE_128', 'QR_CODE']"
+    [tryHarder]="true"
+  ></zxing-scanner>
+
+  <section class="results" *ngIf="qrResultString">
+    <small>Código: </small> <strong>{{ qrResultString }}</strong>
+  </section>
+</div>
+
+<ng-container *ngIf="hasPermission === undefined">
+  <h2>Aguardando permissão da câmera...</h2>
+
+  <blockquote>
+    Se seu dispositivo não possui câmera, nenhuma permissão será solicitada.
+  </blockquote>
+</ng-container>
+
+<ng-container *ngIf="hasPermission === false">
+  <h2>
+    Você negou permissão a câmera do seu dispositivo. Não podemos ajudar 😪
+  </h2>
+</ng-container>
+
+<ng-container *ngIf="hasDevices === undefined">
+  <h2>Não foi possível verificar o dispositivo.</h2>
+
+  <blockquote>Isso pode ser causado por algum erro de segurança.</blockquote>
+</ng-container>
+
+<ng-container *ngIf="hasDevices === false">
+  <h2>No devices were found.</h2>
+
+  <blockquote>
+    I believe your device has no media devices attached to.
+  </blockquote>
+</ng-container>
+
+<div class="container">
+  <a [routerLink]="home" class="btn btn-default"><button>Voltar</button> </a>
+</div>
+
+<footer>
+  <small class="ng-version">Angular version: {{ ngVersion }}</small>
+</footer>
