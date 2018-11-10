@@ -1,3 +1,4 @@
+import { CodeScannedService } from "./../_shared/services/code-scanned.service";
 import { Component, VERSION, OnInit, ViewChild } from "@angular/core";
 import { ZXingScannerComponent } from "@zxing/ngx-scanner";
 import { Result } from "@zxing/library";
@@ -17,6 +18,7 @@ export class ScannerComponent implements OnInit {
   hasPermission: boolean;
   qrResultString: string;
   qrResult: Result;
+  hasResult: boolean;
 
   autofocusEnabled = true;
 
@@ -26,7 +28,7 @@ export class ScannerComponent implements OnInit {
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo;
 
-  constructor() {}
+  constructor(private codeScan: CodeScannedService) {}
 
   ngOnInit(): void {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
@@ -41,6 +43,7 @@ export class ScannerComponent implements OnInit {
     this.scanner.permissionResponse.subscribe(
       (perm: boolean) => (this.hasPermission = perm)
     );
+    this.hasResult = true;
   }
 
   displayCameras(cameras: MediaDeviceInfo[]) {
@@ -51,6 +54,9 @@ export class ScannerComponent implements OnInit {
   handleQrCodeResult(resultString: string) {
     console.debug("Result: ", resultString);
     this.qrResultString = resultString;
+    this.hasResult = true;
+
+    this.codeScan.newCodeScanned(this.qrResultString);
   }
 
   // onDeviceSelectChange(selectedValue: string) {
@@ -61,10 +67,10 @@ export class ScannerComponent implements OnInit {
 
   camerasFoundHandler(camera) {
     console.log(camera);
-    this.currentDevice = camera[1];
-    // camera.legth > 1
-    //   ? (this.currentDevice = camera[1])
-    //   : (this.currentDevice = camera[0]);
+    // this.currentDevice = camera[0];
+    camera.length > 1
+      ? (this.currentDevice = camera[1])
+      : (this.currentDevice = camera[0]);
   }
 
   stateToEmoji(state: boolean): string {

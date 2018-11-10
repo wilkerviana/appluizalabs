@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class CodeScannedService {
   private codeReceived = new BehaviorSubject<string>("");
   currentCode = this.codeReceived as Observable<string>;

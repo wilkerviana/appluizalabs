@@ -7,11 +7,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./form-item.component.scss"]
 })
 export class FormItemComponent implements OnInit {
-  constructor(private codeScanned: CodeScannedService) {}
+  home = "/home";
+
+  code: string;
+
+  constructor(private codeScan: CodeScannedService) {}
 
   ngOnInit() {
-    this.codeScanned.currentCode.subscribe(code =>
-      console.log("receivedCode", code)
-    );
+    this.codeScan.currentCode.subscribe(code => {
+      this.code = code;
+      console.log("receivedCode", code);
+    });
   }
 }
