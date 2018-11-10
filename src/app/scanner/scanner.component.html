@@ -1,30 +1,22 @@
 <div class="scanner-shell" [hidden]="!hasDevices">
-  <header>
-    <select (change)="onDeviceSelectChange($event.target.value)">
-      <option value="" [selected]="!currentDevice"
-        >Nenhuma câmera selecionada</option
-      >
-      <option
-        *ngFor="let device of availableDevices"
-        [value]="device.deviceId"
-        [selected]="currentDevice && device.deviceId === currentDevice.deviceId"
-        >{{ device.label }}</option
-      >
-    </select>
-  </header>
-
   <zxing-scanner
     #scanner
     [device]="currentDevice"
+    [autofocusEnabled]="autofocusEnabled"
+    (camerasFound)="camerasFoundHandler($event)"
     (scanSuccess)="handleQrCodeResult($event)"
+    (scanComplete)="scanCompleteHandler($event)"
     [formats]="['EAN_13', 'CODE_128', 'QR_CODE']"
     [tryHarder]="true"
   ></zxing-scanner>
-
-  <section class="results" *ngIf="qrResultString">
-    <small>Código: </small> <strong>{{ qrResultString }}</strong>
-  </section>
 </div>
+
+<section class="results" *ngIf="qrResultString">
+  <h1>Código de {{ qrResultString }} encontrado!</h1>
+  <a [routerLink]="formItem" class="btn btn-default">
+    <button>Clique para cadastrar</button>
+  </a>
+</section>
 
 <ng-container *ngIf="hasPermission === undefined">
   <h2>Aguardando permissão da câmera...</h2>
@@ -42,8 +34,6 @@
 
 <ng-container *ngIf="hasDevices === undefined">
   <h2>Não foi possível verificar o dispositivo.</h2>
-
-  <blockquote>Isso pode ser causado por algum erro de segurança.</blockquote>
 </ng-container>
 
 <ng-container *ngIf="hasDevices === false">
@@ -55,7 +45,7 @@
 </ng-container>
 
 <div class="container">
-  <a [routerLink]="home" class="btn btn-default"><button>Voltar</button> </a>
+  <a [routerLink]="home" class="btn btn-radius"><button>X</button> </a>
 </div>
 
 <footer>

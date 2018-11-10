@@ -17,7 +17,11 @@ export class ScannerComponent implements OnInit {
   hasPermission: boolean;
   qrResultString: string;
   qrResult: Result;
+
+  autofocusEnabled = true;
+
   home = "/home";
+  formItem = "/form-item";
 
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo;
@@ -49,9 +53,18 @@ export class ScannerComponent implements OnInit {
     this.qrResultString = resultString;
   }
 
-  onDeviceSelectChange(selectedValue: string) {
-    console.debug("Selection changed: ", selectedValue);
-    this.currentDevice = this.scanner.getDeviceById(selectedValue);
+  scanCompleteHandler(c) {
+    console.log("end");
+  }
+
+  // onDeviceSelectChange(selectedValue: string) {
+  //   console.debug("Selection changed: ", selectedValue);
+  //   this.currentDevice = this.scanner.getDeviceById(selectedValue);
+  //   console.log(this.currentDevice);
+  // }
+
+  camerasFoundHandler(camera) {
+    this.currentDevice = camera[0];
   }
 
   stateToEmoji(state: boolean): string {

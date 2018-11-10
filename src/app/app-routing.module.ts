@@ -1,3 +1,4 @@
+import { FormItemComponent } from "./form-item/form-item.component";
 import { ScannerComponent } from "./scanner/scanner.component";
 import { HomeComponent } from "./home/home.component";
 import { StatusComponent } from "./status/status.component";
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: "scanner",
     component: ScannerComponent
+  },
+  {
+    path: "form-item",
+    component: FormItemComponent
   },
   {
     path: "**",

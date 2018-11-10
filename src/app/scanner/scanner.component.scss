@@ -6,6 +6,22 @@
     width: 100%;
   }
 }
+.btn-radius {
+  background: #0081ce;
+  border-radius: 50%;
+  display: block;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 40px / 2);
+  & button {
+    color: #fff;
+    font-size: 20px;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+}
 
 footer {
   position: absolute;
@@ -19,5 +35,22 @@ footer {
 }
 
 .results {
-  margin: 1rem auto;
+  position: absolute;
+  top: 2em;
+  left: 20%;
+  & h1 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.scanner-shell {
+  height: 100vh;
+
+  /deep/ video {
+    height: 100vh !important;
+    width: 100vw;
+    object-fit: contain;
+  }
 }
