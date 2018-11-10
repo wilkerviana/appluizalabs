@@ -64,7 +64,10 @@ export class ScannerComponent implements OnInit {
   // }
 
   camerasFoundHandler(camera) {
-    this.currentDevice = camera[0];
+    console.log(camera);
+    camera.legth > 1
+      ? (this.currentDevice = camera[1])
+      : (this.currentDevice = camera[0]);
   }
 
   stateToEmoji(state: boolean): string {
