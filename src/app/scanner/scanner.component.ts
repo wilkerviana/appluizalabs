@@ -53,10 +53,6 @@ export class ScannerComponent implements OnInit {
     this.qrResultString = resultString;
   }
 
-  scanCompleteHandler(c) {
-    console.log("end");
-  }
-
   // onDeviceSelectChange(selectedValue: string) {
   //   console.debug("Selection changed: ", selectedValue);
   //   this.currentDevice = this.scanner.getDeviceById(selectedValue);
@@ -65,7 +61,7 @@ export class ScannerComponent implements OnInit {
 
   camerasFoundHandler(camera) {
     console.log(camera);
-    this.currentDevice = camera[0];
+    this.currentDevice = camera[1];
     // camera.legth > 1
     //   ? (this.currentDevice = camera[1])
     //   : (this.currentDevice = camera[0]);

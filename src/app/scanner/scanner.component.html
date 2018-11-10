@@ -2,10 +2,8 @@
   <zxing-scanner
     #scanner
     [device]="currentDevice"
-    [autofocusEnabled]="autofocusEnabled"
     (camerasFound)="camerasFoundHandler($event)"
     (scanSuccess)="handleQrCodeResult($event)"
-    (scanComplete)="scanCompleteHandler($event)"
     [formats]="['EAN_13', 'CODE_128', 'QR_CODE']"
     [tryHarder]="true"
   ></zxing-scanner>
